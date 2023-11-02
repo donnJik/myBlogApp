@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+</head>
+<style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+  
+    h1 {
+      text-align: center;
+      background-color: #1e90ff;
+      color: #fff;
+      padding: 20px 0;
+      margin: 0;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+  
+    li {
+      background-color: #fff;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    h2 {
+      color: #1e90ff;
+    }
+  
+    p {
+      font-size: 16px;
+    }
+  
+    a {
+      text-decoration: none;
+      color: #1e90ff;
+      font-weight: bold;
+    }
+  
+    a:hover {
+      color: #0055a4;
+    }
+  
+    .add-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+  
+
+  
+  
+<body>
+  <h1>My blog</h1>
+  <ul>
+    <% blogPosts.forEach((post) => { %>
+      <li>
+        <h2><%= post.title %></h2>
+        <p><%= post.content.slice(0, 100) %></p>
+        <a href="/post/<%= blogPosts.indexOf(post) %>">Read more</a>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/add">Add a message</a>
+</body>
+</html>
